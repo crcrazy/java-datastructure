@@ -1,0 +1,11 @@
+class{
+    public A()
+    {
+        // if no initialization, then create 10 elements
+        this.A(10);
+    }
+    public A(int InitialCapacity)
+    {
+       ...
+    }
+    }
