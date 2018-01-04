@@ -40,5 +40,32 @@ public class CircularlyLinkedList<E> {
         return tail.getElement();
     }
 
+    public void rotate(){
+        if(tail!=null){
+            tail=tail.getNext();
+        }
+    }
 
+    public void addFirst(E e){
+        if(size==0) {
+            tail=new Node<>(e,null);
+            tail.setNext(tail);
+        }else{
+            Node<E> newNode=new Node<>(e,null);
+            tail.setNext(newNode);
+        }
+        size++;
+    }
+    public void addLast(E e){
+        addFirst(e);
+        tail=tail.getNext();
+    }
+    public E removeFirst(){
+        if(tail==null) return null;
+        Node<E> head= tail.getNext();
+        if(head==tail) tail=null; else{
+        tail.setNext(head.getNext());}
+        size--;
+        return head.getElement();
+    }
 }
